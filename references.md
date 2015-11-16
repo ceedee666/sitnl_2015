@@ -4,4 +4,4 @@
 * [Elixir](http://elixir-lang.org/)
 * [Elixir Cheat Sheet](http://media.pragprog.com/titles/elixir/ElixirCheat.pdf)
 * [Try Elixir online](http://elixirplayground.com/)
-* [ExTwitter](https://github.com/parroty/extwitter)
+* [Études for Elixir](http://chimera.labs.oreilly.com/books/1234000001642/pr01.html)
