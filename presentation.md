@@ -7,15 +7,16 @@
 1. [Functions](#/6)
 1. [Recursion](#/7)
 1. [Concurrency](#/8)
-
+1. [DSLs](#/9)
 
 
 # Why FP?
 
-- Abstractions
 - Immutability
-- DSLs
 - Concurrency
+- DSLs
+
+- Fun and challenging 
 
 
 
@@ -137,7 +138,7 @@ s = fn(x) -> x * x end
 
 # Named function
 # Note that function params are patterns
-defmodule SitMuc1 do
+defmodule SitNL1 do
   def factorial(0) do 1 end
   def factorial(n) do n * factorial(n-1) end
 end
@@ -259,4 +260,29 @@ defmodule Messenger do
     send(router, {routers , message})
   end
 end
+```
+
+
+
+#DSLs
+
+``` Elixir
+defmodule Mazes do
+  @doc """
+    Generate a maze for a 'grid' using the binary tree algorithm
+  """
+  def generate_using_binary_tree(grid = %Grid{}) do
+    :random.seed(:os.timestamp)
+    Grid.all_cell_indices(grid) |>
+      Enum.reduce(grid, &generate_using_binary_tree(&1, &2))
+  end
+
+  defp generate_using_binary_tree(index, grid) do
+    Grid.neighbors_ne(grid, index) |>
+      Enum.take_random(1) |>
+      List.flatten |>
+      Grid.link_cells(index, grid)
+  end
+end
+
 ```
