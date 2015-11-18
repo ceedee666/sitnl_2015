@@ -1,2 +1,0 @@
-defmodule ElixirTwitterTest do
-end
