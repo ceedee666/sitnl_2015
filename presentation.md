@@ -116,19 +116,13 @@ x = 1
 
 
 #Functions
- 
+
+
+##Anonymous & named functions 
 * Two types of functions
   * Anonymous functions
   * Named functions
-
-* Functions are first-class citizens 
-  * Can be assigned to variables
-  * Can be function parameters
-  * Can be return value of other functions
-
-
-##Anonymous & named functions
-
+  
 ``` Elixir
 # Anonymous functions
 d = &(&1 + &1)
@@ -144,6 +138,10 @@ end
 
 
 ##Higher order functions
+* Functions are first-class citizens 
+  * Can be assigned to variables
+  * Can be function parameters
+  * Can be return value of other functions
 
 ``` Elixir
 # Create a list with some data 
@@ -231,14 +229,12 @@ end
 
 
 #Concurrency 
-- Processes are the basis for concurrency 
-  - extremely lightweight 
-  - isolated (share nothing)
-  - communicate via message passing
 
 
-#Concurrency Example
-- Simple message router
+# Elixir Processes
+- extremely lightweight 
+- isolated (share nothing)
+- communicate via message passing
 
 ``` Elixir
 defmodule Router do
@@ -258,9 +254,6 @@ end
 ```
 
 
-#Concurrency Example
-- Instantiating processes 
-
 ``` Elixir
 defmodule Messenger do
   def deliver(message, processes) do
@@ -275,8 +268,8 @@ Messenger.deliver("Hello #sitNL 007", 10000)
 
 
 
-#DSLs
-- Building abstractions using core language features
+#DSL
+- Creating DSLs is a core language features
 - Example: maze generation using the binary tree algorithm
 
 ```
