@@ -10,6 +10,7 @@
 1. [DSLs](#/9)
 
 
+
 # Why FP?
 
 - Immutability
@@ -233,6 +234,14 @@ end
 
 
 #Concurrency 
+- Processes are the basis for concurrency 
+  - extremely lightweight 
+  - isolated (share nothing)
+  - communicate via message passing
+
+
+#Concurrency Example
+- Simple message router
 
 ``` Elixir
 defmodule Router do
@@ -252,6 +261,9 @@ end
 ```
 
 
+#Concurrency Example
+- Instantiating processes 
+
 ``` Elixir
 defmodule Messenger do
   def deliver(message, processes) do
@@ -260,11 +272,23 @@ defmodule Messenger do
     send(router, {routers , message})
   end
 end
+
+Messenger.deliver("Hello #sitNL 007", 10000)
 ```
 
 
 
 #DSLs
+- Building abstractions using core language features
+- Example: maze generation using the binary tree algorithm
+
+```
+for each cell in the grid do
+  select a random neighbor from the north or east
+  link the current cell to the selected cell
+end
+```
+
 
 ``` Elixir
 defmodule Mazes do
