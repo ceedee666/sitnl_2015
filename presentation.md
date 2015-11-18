@@ -38,16 +38,13 @@
 
 
 ## Basic Types
-
 ``` Elixir
 # There are numbers
 3    # integer
 3.0  # float
 
-# Atoms, that are literals, a constant with name.
+# Atoms, that are literals, a constant with name and strings.
 :hello # atom
-
-# Strings
 "hello" # string
 
 # Lists that are implemented as linked lists.
